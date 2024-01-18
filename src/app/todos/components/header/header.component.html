@@ -1,0 +1,7 @@
+<header class="header">
+  <h1>todos</h1>
+  <input (keyup)="changeText($any($event.target).value)"
+         (keyup.enter)="addTodo()"
+         [value]="text"
+         class="new-todo" placeholder="O que precisa ser feito?">
+</header>

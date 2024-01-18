@@ -1,0 +1,7 @@
+<section class="main">
+  <ul>
+    @for (todo of visibleTodos(); track todo.id) {
+      <div>{{ todo.text }}</div>
+    }
+  </ul>
+</section>
