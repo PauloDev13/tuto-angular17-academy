@@ -1,7 +1,5 @@
 <section class="main">
-  <ul>
-    @for (todo of visibleTodos(); track todo.id) {
-      <div>{{ todo.text }}</div>
-    }
-  </ul>
+  @for (todo of visibleTodos(); track todo.id) {
+    <app-todo [todo]="todo" [isEditing]="editingId === todo.id" (setEditingId)="setEditingId($event)"></app-todo>
+  }
 </section>

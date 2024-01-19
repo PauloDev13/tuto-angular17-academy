@@ -12,10 +12,12 @@ import { FilterEnum } from '../../types/filter.enum';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
+  itemsLeftText = computed(() => `item${this.activeCount() !== 1 ? 's' : ''}`);
   protected readonly todosService = inject(TodoService);
   activeCount = computed(
     () => this.todosService.todosSig().filter(todo => !todo.isCompleted).length
   );
+  noTodosClass = computed(() => this.todosService.todosSig().length === 0);
   protected readonly filterSig = this.todosService.filterSig;
   protected readonly filterEnum = FilterEnum;
 
